@@ -23,21 +23,25 @@ protected:
 	virtual void BeginPlay() override;
 	void MoveForward(float AxisX);
 	void MoveRight(float AxisY);
-	UInputMappingContext* Liste_Input_Action;
 
-public:	
-	UPROPERTY (VisibleAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "InputMapping")
+	UInputMappingContext* Liste_Input_Action;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Enhanced Input")
+	UInputAction* IA_Move_Player;
+
+public:
+	UPROPERTY(VisibleAnywhere)
 	UCapsuleComponent* Capsule;
 
-	UPROPERTY (VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere)
 	UMeshComponent* MeshComponent;
 
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	
-	
 
-	
+
+
+
 };
